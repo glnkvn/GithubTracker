@@ -23,12 +23,20 @@ export const Git= ({username}) => {
         }
         getRepos()
     },[username])
-    console.log(repos)
+
+    function repoNames(){
+        const nameArr = [] ;
+        for( let item in  repos ){
+            nameArr.push(<p>{repos[item].name}</p>);
+        }
+        return nameArr;
+    }
+    
     return (
         <div> 
             <p>{username}</p> 
             <p>Number of Repos:{repos.length} </p>
-            {/* <p>Name of Repos:{repos[0]['name']} </p> */}
+            <p>Name of Repos: { repoNames() }</p>
         </div>
     )
 }
