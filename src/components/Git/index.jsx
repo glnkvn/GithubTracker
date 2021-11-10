@@ -1,10 +1,10 @@
 import React, { useEffect , useState } from 'react';
 import axios from 'axios';
 import { API_URL } from '../../constants';
-import { error } from '../../actions'
-import { useDispatch } from 'react-redux'
-
-
+import { error } from '../../actions';
+import { useDispatch } from 'react-redux';
+// import { uuid } from 'uuidv4';
+import { RepoInfo } from '../RepoInfo';
 
 export const Git= ({username}) => {
     const dispatch = useDispatch(); 
@@ -24,19 +24,25 @@ export const Git= ({username}) => {
         getRepos()
     },[username])
 
-    function repoNames(){
+    function repoNam(){
         const nameArr = [] ;
         for( let item in  repos ){
             nameArr.push(<p>{repos[item].name}</p>);
+            // <RepoInfo key = {item} name = {repos[item].name}  username={username}/>
         }
+
+        
         return nameArr;
     }
-    
+    // gitTotal.map((a, i) => <Git key={i} username={a}/>);
+    const repoNames = () => repos.map((a, i) => <RepoInfo key={i} name = {a.name} username={a}/>);
+
     return (
         <div> 
             <p>{username}</p> 
             <p>Number of Repos:{repos.length} </p>
-            <p>Name of Repos: { repoNames() }</p>
+            <p>Name of Repos: {repoNames()}</p>
+            {/* <p>Name of Repos: { repoNam() }</p> */}
         </div>
     )
 }
