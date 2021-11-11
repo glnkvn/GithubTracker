@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 
 export const GitTotal = () => {
     const gitTotal = useSelector((store) => store.username);
-    
+    console.log(gitTotal)
     const renderGitTotal = () => gitTotal.map((a, i) => <Git key={i} username={a}/>);
     
 

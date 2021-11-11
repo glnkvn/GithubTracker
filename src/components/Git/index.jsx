@@ -12,18 +12,23 @@ export const Git= ({username}) => {
     
     useEffect(() => {
         const getRepos = async () => {
-            try {
-            const { data } = await axios.get(`https://api.github.com/users/${username}/repos`);
-                console.log(username);
-                setRepos(data)
-                
-            } catch (err) {
-                dispatch(error(err))               
+            if (username) {
+                try {
+                const { data } = await axios.get(`https://api.github.com/users/${username}/repos`);
+                    console.log(username);
+                    setRepos(data)
+                    
+                } catch (err) {
+                    dispatch(error(err))               
+                }
             }
         }
         getRepos()
     },[username])
     console.log(repos)
+
+
+
     return (
         <div> 
             <p>{username}</p> 
