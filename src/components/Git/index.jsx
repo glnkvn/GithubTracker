@@ -1,3 +1,4 @@
+
 import React, { useEffect , useState } from 'react';
 import axios from 'axios';
 import { API_URL } from '../../constants';
@@ -28,14 +29,15 @@ export const Git= ({username}) => {
         const nameArr = [] ;
         for( let item in  repos ){
             nameArr.push(<p>{repos[item].name}</p>);
-            // <RepoInfo key = {item} name = {repos[item].name}  username={username}/>
+            console.log(username);
+            <RepoInfo key={item} name={repos[item].name}  username={username}/>
         }
 
         
         return nameArr;
     }
     // gitTotal.map((a, i) => <Git key={i} username={a}/>);
-    const repoNames = () => repos.map((a, i) => <RepoInfo key={i} name = {a.name} username={a}/>);
+   const repoNames = () => repos.map((a, i) => <RepoInfo key={i} name = {a.name} username={username} />);
 
     return (
         <div> 
@@ -47,8 +49,6 @@ export const Git= ({username}) => {
     )
 }
  
-    
-    
     
     
     
