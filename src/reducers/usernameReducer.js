@@ -10,5 +10,7 @@ export const usernameReducer = (state=initState, action) => {
             return { error: action.payload }
         default :
             return state;
+        };
     };
-};
+
+

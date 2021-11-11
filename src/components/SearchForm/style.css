@@ -1,0 +1,39 @@
+#container {
+    width: 100%;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    
+}
+.grid-element {
+    align-items: center;
+    text-align: center;
+}
+
+button:hover {
+    background-color:grey;
+    color: white;
+}
+button {
+    background-color: lightgrey;
+    width: 80px;
+    height: 30px;
+    border-radius: 5px;
+    margin: 10px;
+    
+}
+
+input {
+    height: 24px;
+    position: relative;
+}
+
+h3 {
+    margin: 10px;
+    position: relative;
+}
+
+label {
+    margin: 10px;
+}

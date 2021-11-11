@@ -11,7 +11,7 @@ export const GitTotal = () => {
 
     return (
         <main id="gitGrid">
-            <h2>Github User</h2>
+            {/* <h2>Github User</h2> */}
             <article>
                 {renderGitTotal()}
                 {/* <Git username={{gitTotal}} /> */}
