@@ -1,0 +1,25 @@
+#Review 
+- Doesn't load any new usernames that are added, throws error saying 'Uncaught (in promise) TypeError: gitTotal is undefined'.
+
+- Lots of commented out code that maybe could be deleted?
+
+- Styling would be a neat addition and a favicon.
+
+- Seed data looks to be adding a lot of API calls on when the page is loaded which is exceeding the API rate limit pretty quick.
+
+####Git
+- Line 4 API_URL isn't being used, could be deleted?
+
+- Line 28 function isn't being called or exported anywhere.
+
+
+####GitTotal
+- The function and variable in the function have super similar names, only difference is capitalisation which could get confusing.
+
+- const gitTotal in this file is what was returning as undefined when we tried to run the app.
+
+####RepoInfo
+- Can't see if the API stuff works here but looks like a cool/smart way of getting the number of commits! 
+
+####SerchForm
+- useEffect and useState are being brought in but not being used.
