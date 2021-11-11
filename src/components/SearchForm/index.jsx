@@ -1,17 +1,15 @@
+
 import React, { useEffect , useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { updateUsername } from '../../actions'
 
-export const SearchForm = () => {
-    
-    const dispatch = useDispatch()
+const SearchForm = () => {
+
+
     const handleSubmit = (e) => {
-        e.preventDefault()
-        const username = e.target[0].value;
-        console.log(username)
-        dispatch(updateUsername(username))
+        const username= e.target.value;
     }
 
+    dispatch
 
     return(
         <>
@@ -25,3 +23,4 @@ export const SearchForm = () => {
     )
 }
 
+export default SearchForm;
