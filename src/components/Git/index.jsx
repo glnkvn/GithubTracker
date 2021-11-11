@@ -6,6 +6,7 @@ import { error } from '../../actions';
 import { useDispatch } from 'react-redux';
 // import { uuid } from 'uuidv4';
 import { RepoInfo } from '../RepoInfo';
+import './style.css'
 
 export const Git= ({username}) => {
     const dispatch = useDispatch(); 
@@ -13,18 +14,21 @@ export const Git= ({username}) => {
     
     useEffect(() => {
         const getRepos = async () => {
-            if(username){
+            if (username) {
                 try {
-                    const { data } = await axios.get(`https://api.github.com/users/${username}/repos`);
+                const { data } = await axios.get(`https://api.github.com/users/${username}/repos`);
                     console.log(username);
-                    setRepos(data)   
+                    setRepos(data)
+                    
                 } catch (err) {
                     dispatch(error(err))               
                 }
-            }           
+            }
         }
         getRepos()
     },[username])
+    console.log(repos)
+
 
     function repoNam(){
         const nameArr = [] ;
@@ -40,12 +44,13 @@ export const Git= ({username}) => {
     // gitTotal.map((a, i) => <Git key={i} username={a}/>);
    const repoNames = () => repos.map((a, i) => <RepoInfo key={i} name = {a.name} username={username} />);
 
+
     return (
         <div> 
-            <p>{username}</p> 
+            {/* <p>{username}</p> 
             <p>Number of Repos:{repos.length} </p>
-            {/* <p>Name of Repos: {repoNames()}</p> */}
-            {/* <p>Name of Repos: { repoNam() }</p> */}
+            {repoNames()} */}
+            <p>List of Information</p>
         </div>
     )
 }
